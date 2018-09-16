@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+
+  piface-relay:
+
+    build: .
+
+    devices:
+      # the spi bus
+      - "/dev/ttyAMA0:/dev/ttyAMA0"
+    volumes:
+      - "./:/srv"
+    command: spidev_test -D /dev/spidev0.0 -s 10000000 && python /srv/pfr_test.py
+    privileged: true
+
