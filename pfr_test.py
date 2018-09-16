@@ -9,7 +9,7 @@ def toggle_leds(pfr):
 
 
 if __name__ == '__main__':
-    pfr = pifacerelayplus.PiFaceRelayPlus(pifacerelayplus.RELAY)
+    # init board with 10 MHz spi speed
+    pfr = pifacerelayplus.PiFaceRelayPlus(pifacerelayplus.RELAY, speed_hz=10000000)
     while True:
         toggle_leds(pfr)
-

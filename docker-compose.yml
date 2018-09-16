@@ -11,6 +11,6 @@ services:
       - "/dev/ttyAMA0:/dev/ttyAMA0"
     volumes:
       - "./:/srv"
-    command: sh -c 'spidev_test -D /dev/spidev0.0 -s 10000000 && python /srv/pfr_test.py'
+    command: python /srv/pfr_test.py
     privileged: true
 
